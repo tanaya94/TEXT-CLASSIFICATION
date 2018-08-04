@@ -31,3 +31,30 @@ Exploring the Data:
 I will do some data exploration to see if I find any important trends.
 
 ![Figure 3](Figure3.png)
+
+Figure 3 above presents the distribution of the labels in my data. 87% of the data is ham. This is a good thing because that means people get more regular text than spam. This is also important to remember later when the data is split for training. 
+
+I wanted to know the most common words present, and to do this I removed the English stop words which are words such as: you, are, this, the, etc. These words have little to no importance in making the classification accurate. After that, I created word clouds.  Figure 4 below illustrates two word-clouds: one for Ham and the other for Spam.
+
+![Figure 4](Figure4.png)
+
+I also explored the length of the messages to see whether the lengths for each label had any significant difference. Figure 5 contains a density graph for each label. You can see that the majority of messages for Ham are between 1 and 180 in length and the majority of messages that are spam range between 110 to 170 in length.
+
+![Figure 5](Figure5.png)
+
+Training the Data
+Before I trained the data, I had to split it. I split 70% for training and 30% for testing. Earlier in figure 3, I saw that 13% of the messages were spam. In order to prevent an unbalanced selection of labels during the data split, the stratify attribute of the test split method was used. 
+
+In order to use the text data, I needed to convert it to a numerical value. The two methods available are CountVectorizer and TfidfVectorizer.
+
+CountVectorizer:
+
+The Count Vectorizer takes each word and stores it in a Python dictionary that maps each word to unique integer indices. This produces a sparse matrix. Each index position in the vectors corresponds to the integer value that was stored in countvectorizer dictionary. These values are called raw term frequencies which is the number of times a term occurs in a document (row entry). The stop word attribute was used to remove common English words.
+
+TfidfVectorizer (TF-IDF):
+
+This implantation is the same as CountVectorizer with an additional TF-IDF transformation. This mathematically produces the product of term frequency and Inverse Document Frequency. Equation 1 below is the equation to get the product. It also shows the equation to get idf. 
+
+![Equation 1](Equation1.png)
+
+
