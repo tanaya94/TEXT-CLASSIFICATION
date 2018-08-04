@@ -6,11 +6,11 @@ Spam text messages are becoming more frequent on a daily basis. I wanted to buil
 
 My goals for this project are to:
 
-•	Confirm the Naïve Bayes Classifier is the best for our data by comparing it to 5 other classifiers.
-•	Find which method is better to transform our text into usable numerical values:
-1.	Raw Term Frequency: CountVectorizer
-2.	TF-IDF: TfidVectorizer.
-•	Find out if different n-gram ranges produce better results.
+*	Confirm the Naïve Bayes Classifier is the best for our data by comparing it to 5 other classifiers.
+*	Find which method is better to transform our text into usable numerical values:
+    * Raw Term Frequency: CountVectorizer
+    * TF-IDF: TfidVectorizer.
+*	Find out if different n-gram ranges produce better results.
 
 Proposed Method:
 I will go through some processes to get to my results.
