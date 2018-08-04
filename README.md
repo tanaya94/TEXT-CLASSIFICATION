@@ -22,3 +22,12 @@ I needed to clean the data and prepare it to use it for analysis. The first thin
 
 I decided to remove all punctuation marks from the text data. This includes periods, commas, question marks, exclamation marks, etc. This was done by creating a function named "remove_punctuations". I also added two additional columns. The first column was “msg length” which contains the length of the messages per row in my data frame. The second column is a numerical representation of the “label” column, each row contains either a 1 or 0. Ham is 0 and Spam is 1. Figure 2 below demonstrates the final cleaned data frame.
 
+![Figure 2](Figure2.png)
+
+Other data frames were created for quick data analysis. But they are not important, so I omitted them in this report. They can be seen in the Python code.
+
+Exploring the Data:
+
+I will do some data exploration to see if I find any important trends.
+
+![Figure 3](Figure3.png)
