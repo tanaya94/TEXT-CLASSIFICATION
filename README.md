@@ -19,4 +19,4 @@ Data Preprocessing:
 
 I needed to clean the data and prepare it to use it for analysis. The first thing I needed to do was to rename the labels of the data to something more meaningful. I renamed the first columns “label” which contains the targets: Spam or Ham. The second column was renamed to “messages” and it contains the text messages. Figure 1 below illustrates the change.
 
-![Figure 1](Picture1.png)
+![Figure 1](Figure1.png)
