@@ -1,7 +1,7 @@
 # TEXT-CLASSIFICATION
 
 
-Introduction:
+## Introduction: ##
 
 Spam text messages are becoming more frequent on a daily basis. I wanted to build a model that can predict if a text message is a spam or not with a high accuracy. I used the SMS Spam Collection dataset from the UCI machine learning repository in order to do so. My target labels are Spam or Ham. In our dataset, Ham means that a message is not spam. I used the Naïve Bayes Classifier to produce a high predicting accuracy score. I had to convert the text into a number for our classifiers to work. 
 
@@ -14,7 +14,7 @@ My goals for this project are to:
 *	Find out if different n-gram ranges produce better results.
 
 
-Data Preprocessing:
+## Data Preprocessing: ##
 
 I needed to clean the data and prepare it to use it for analysis. The first thing I needed to do was to rename the labels of the data to something more meaningful. I renamed the first columns “label” which contains the targets: Spam or Ham. The second column was renamed to “messages” and it contains the text messages. Figure 1 below illustrates the change.
 
@@ -26,7 +26,7 @@ I decided to remove all punctuation marks from the text data. This includes peri
 
 Other data frames were created for quick data analysis. But they are not important, so I omitted them in this report. They can be seen in the Python code.
 
-Exploring the Data:
+## Exploring the Data: ##
 
 I will do some data exploration to see if I find any important trends.
 
@@ -42,7 +42,8 @@ I also explored the length of the messages to see whether the lengths for each l
 
 ![Figure 5](Figure5.png)
 
-Training the Data
+## Training the Data: ##
+
 Before I trained the data, I had to split it. I split 70% for training and 30% for testing. Earlier in figure 3, I saw that 13% of the messages were spam. In order to prevent an unbalanced selection of labels during the data split, the stratify attribute of the test split method was used. 
 
 In order to use the text data, I needed to convert it to a numerical value. The two methods available are CountVectorizer and TfidfVectorizer.
@@ -67,24 +68,24 @@ I believe the Naïve Bayes classifier will be the best to use with my data. To c
 N-Gram Ranges
 I would like to check whether bigger sizes of n-gram ranges increase the accuracy score of the classifiers. I assume that n-grams of size 3 or 4 will have higher accuracy scores than the rest.
 
-Experimental Results and Analysis
+## Experimental Results and Analysis: ##
 
-Count Vectorizer VS TFIDF Vectorizer Results
+Count Vectorizer VS TFIDF Vectorizer Results:
 
 After running the classifier, I found that in general, implementing the Count Vectorizer to my classifier produced a higher score with the exception of the SVC Classifier. This is illustrated in Figure 6 below.
 
 ![Figure 6](Figure6.png)
 
-Naïve Bayes Classifier of Choice Results.
+Naïve Bayes Classifier of Choice Results:
 
 This assumption is correct. Naïve Bayes did indeed produce the highest prediction accuracy score. This can be seen in the figure above.
 
-N-Gram Assumption Result
+N-Gram Assumption Results:
 
-After some analysis, i found that higher sizes of n-gram produce lower scores. Figure 7 below illustrates this using a bar plot. You can see that this is true for all the classifiers except for SVC where there is slight increase. 
+After some analysis, I found that higher sizes of n-gram produce lower scores. Figure 7 below illustrates this using a bar plot. You can see that this is true for all the classifiers except for SVC where there is slight increase. 
 
 ![Figure 7](Figure7.png)
 
-Conclusion:
+## Conclusion: ##
 
 1 out of 3 assumptions were correct. The TfidfVectorizer was not the best to use. This could be because it is more effective in a larger data set. The Naïve Bayes classifier was the most accurate. The higher n-gram sizes did not produce better accuracy scores. I learned that to produce the most accurate score, we have to implement the CountVectorizer to the Naïve Bayes classifier using a unigram. 
