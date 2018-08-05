@@ -57,4 +57,34 @@ This implantation is the same as CountVectorizer with an additional TF-IDF trans
 
 ![Equation 1](Equation1.png)
 
+In simpler words, it weighs down the most frequent words in our data and gives less common words more value to produce better results when it is put through a classifier.
 
+Implementing the TfidVectorizer seems to be more beneficial, but I will test this to confirm.
+
+Classifiers
+I believe the Naïve Bayes classifier will be the best to use with my data. To confirm this, I will compare this model to 5 other models: SVC, KNeighbors, Decision Tree, Logistic Regression, and Random Forest.
+
+N-Gram Ranges
+I would like to check whether bigger sizes of n-gram ranges increase the accuracy score of the classifiers. I assume that n-grams of size 3 or 4 will have higher accuracy scores than the rest.
+
+Experimental Results and Analysis
+
+Count Vectorizer VS TFIDF Vectorizer Results
+
+After running the classifier, I found that in general, implementing the Count Vectorizer to my classifier produced a higher score with the exception of the SVC Classifier. This is illustrated in Figure 6 below.
+
+![Figure 6](Figure6.png)
+
+Naïve Bayes Classifier of Choice Results.
+
+This assumption is correct. Naïve Bayes did indeed produce the highest prediction accuracy score. This can be seen in the figure above.
+
+N-Gram Assumption Result
+
+After some analysis, i found that higher sizes of n-gram produce lower scores. Figure 7 below illustrates this using a bar plot. You can see that this is true for all the classifiers except for SVC where there is slight increase. 
+
+![Figure 7](Figure7.png)
+
+Conclusion:
+
+1 out of 3 assumptions were correct. The TfidfVectorizer was not the best to use. This could be because it is more effective in a larger data set. The Naïve Bayes classifier was the most accurate. The higher n-gram sizes did not produce better accuracy scores. I learned that to produce the most accurate score, we have to implement the CountVectorizer to the Naïve Bayes classifier using a unigram. 
